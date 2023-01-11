@@ -17,9 +17,9 @@ ax.set_ylim(-5, 5)
 def animate(i):
     babock.set_data(babock_move(t = np.arange(0, 12*np.pi, 0.01)))
     
-ani = animation.FuncAnimation(fig, animate, frames=100, interval=30)
+# ani = animation.FuncAnimation(fig, animate, frames=100, interval=30)
 
-ani.save('7.31.gif')
+# ani.save('7.31.gif')
 
 fig, ax = plt.subplots()
 serd, = plt.plot([], [], 'o', color='b')
@@ -32,10 +32,13 @@ def serd_move2(t):
 plt.axis('equal')
 ax.set_xlim(-20, 20)
 ax.set_ylim(-20, 20)
-
+x = []
+y = []
 def animate2(i):
-    serd.set_data(serd_move2(t = np.arange(0, 2*np.pi, 0.01)))
+    x.append(serd_move2(t = i)[0])
+    y.append(serd_move2(t = i)[1])
+    serd.set_data(x, y)
     
-ani = animation.FuncAnimation(fig, animate2, frames=100, interval=30)
+ani = animation.FuncAnimation(fig, animate2, frames=np.arange(0, 2*np.pi, 0.1), interval=30)
 
 ani.save('7.32.gif')
