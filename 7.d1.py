@@ -51,7 +51,6 @@ def animate(i):
     y1.append(move1(R1, t = i)[1])
     toch1.set_data(x1, y1)
     ball.set_data(circle_move(R=6.5, t = i))
-    #ctrelka.set_data(ctrelka_move(R=12.5, t = i))
 	
 
 ani = animation.FuncAnimation(fig, animate, frames=np.arange(0, 4*np.pi, 0.6), interval=600)
