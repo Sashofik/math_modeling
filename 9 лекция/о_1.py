@@ -4,23 +4,28 @@ import matplotlib.pyplot as plt
 
 # Пределы изменения переменной величины
 # В данной задаче переменной величиной является время
-t = np.arange(0, 48, 48)
+t = np.arange(0, 100, 1)
 
 # Запись диф. уравнения в виде функции
-def radio_function(m, t):
-    dmdt = h * m
-    return dmdt
+def function(n, t):
+    dndt =  k * n
+    return dndt
 
 # Определение начальных условий и параметров
-m_0 = 1000
-h = 0.08  # Постоянная распада для Висмута 210
+n_0 = 2
+k = 1/30
 
 # Решение дифференциального уравнения функцией odeint
-m_t = odeint(radio_function, m_0, t)
+n_t = odeint(function, n_0, t)
 
 # Построение решения в виде графика функции
-plt.plot(t, m_t[:,0], label='Распад Висмута 210')
-plt.xlabel('Период распада, секунды')
-plt.ylabel('Функция распада')
-plt.title('Радиоактивный распад')
-plt.savefig('o00000.1.png')
+plt.plot(t, n_t[:,0], label='Рост бактерий')
+plt.xlabel('Время, секунды')
+plt.ylabel('Функция роста')
+plt.title('Рост бактерий')
+plt.legend()
+
+for i in range(len(n_t)):
+    if n_t
+
+plt.savefig('o_1.png')
