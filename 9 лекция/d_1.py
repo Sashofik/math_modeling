@@ -8,7 +8,7 @@ def function(v, h):
     dvdh =  (2 * y * R * v * (1 - R/h))*(1/2)
     return dvdh
 
-v_0 = 1
+v_0 = 0
 R = 6377
 y = 9.80665
 
